@@ -1,0 +1,85 @@
+name: plural_rabbit
+description: A free, open-source, offline-first application for plural systems.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Database
+  drift: ^2.18.0
+  drift_sqflite: ^2.2.0
+  sqflite: ^2.3.3
+  sqlite3_flutter_libs: ^0.5.24
+  path_provider: ^2.1.3
+  path: ^1.9.0
+
+  # Encryption
+  flutter_secure_storage: ^9.0.0
+  cryptography: ^2.7.0          # PBKDF2-HMAC-SHA256
+  bcrypt: ^1.1.3                # pattern/pin password hashing
+
+  # Routing
+  go_router: ^14.2.0
+
+  # State management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # UI
+  flutter_markdown: ^0.7.3
+  cached_network_image: ^3.3.1
+  image_picker: ^1.1.2
+  image: ^4.1.7                 # image compression
+  flutter_colorpicker: ^1.1.0
+  reorderable_grid_view: ^2.2.8
+  drag_and_drop_lists: ^0.4.2
+
+  # Media
+  record: ^5.1.2                # voice recording
+  audioplayers: ^6.0.0
+  file_picker: ^8.1.2
+
+  # Notifications
+  flutter_local_notifications: ^17.2.2
+  timezone: ^0.9.4
+
+  # Utils
+  uuid: ^4.4.2
+  intl: ^0.19.0
+  shared_preferences: ^2.3.2
+  collection: ^1.18.0
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  equatable: ^2.0.5
+
+  # HTTP (GitHub API)
+  dio: ^5.6.0
+
+  # Home screen widgets
+  home_widget: ^0.6.0
+
+  # Launcher name
+  flutter_launcher_name: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.11
+  drift_dev: ^2.18.0
+  riverpod_generator: ^2.4.3
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+  mockito: ^5.4.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/body_map/
+    - assets/icons/
+    - assets/onboarding/

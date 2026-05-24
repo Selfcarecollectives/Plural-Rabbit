@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fronting — Plural Rabbit</title>
+  <style>
+    :root {
+      --primary: #6B3FA0;
+      --bg: #FAF8FF;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --surface: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+    h1 { font-size: 1.4rem; color: var(--primary); margin-bottom: 4px; }
+    .subtitle { font-size: 0.85rem; color: var(--muted); margin-bottom: 32px; }
+    .message-box {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+    .message-box p { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      margin-top: auto;
+      padding-top: 32px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <h1>Plural Rabbit</h1>
+  <p class="subtitle">Fronting Status</p>
+
+  <div class="message-box">
+    <p>No front data available yet.</p>
+    <p style="margin-top:12px; font-size:0.8rem;">
+      The app will push a live fronting page here once configured.
+    </p>
+  </div>
+
+  <footer>Plural Rabbit — Open Source &bull; Offline-First &bull; Privacy-Focused</footer>
+</body>
+</html>
