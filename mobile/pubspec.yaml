@@ -12,7 +12,7 @@ dependencies:
 
   # Database
   drift: ^2.18.0
-  drift_sqflite: ^2.2.0
+  drift_sqflite: 2.0.1
   sqflite: ^2.3.3
   sqlite3_flutter_libs: ^0.5.24
   path_provider: ^2.1.3
@@ -62,9 +62,6 @@ dependencies:
 
   # Home screen widgets
   home_widget: ^0.6.0
-
-  # Launcher name
-  flutter_launcher_name: ^0.1.0
 
 dev_dependencies:
   flutter_test:
