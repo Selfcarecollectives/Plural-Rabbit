@@ -1,4 +1,4 @@
-import 'package:drift/drift.dart';
+﻿import 'package:drift/drift.dart' hide Type;
 
 // ---------------------------------------------------------------------------
 // Shared column helpers

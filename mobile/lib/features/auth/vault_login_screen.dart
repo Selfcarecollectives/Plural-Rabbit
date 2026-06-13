@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:drift/drift.dart' hide Type, Column;
+import '../../core/database/app_database.dart';
 import '../../core/database/tables.dart';
 import 'vault_service.dart';
 
-/// Entry point into a vault â€” shows either Open Login (horizontal profile
+/// Entry point into a vault — shows either Open Login (horizontal profile
 /// scroll) or Closed Login (blind name/password entry), depending on the
 /// vault's login_mode setting.
 class VaultLoginScreen extends ConsumerStatefulWidget {
@@ -146,7 +148,7 @@ class _VaultLoginScreenState extends ConsumerState<VaultLoginScreen> {
 }
 
 // ---------------------------------------------------------------------------
-// Open Login â€” horizontal profile cards scroll
+// Open Login — horizontal profile cards scroll
 // ---------------------------------------------------------------------------
 
 class _OpenLoginView extends ConsumerWidget {
@@ -179,7 +181,7 @@ class _OpenLoginView extends ConsumerWidget {
 }
 
 // ---------------------------------------------------------------------------
-// Closed Login â€” blind name + password entry
+// Closed Login — blind name + password entry
 // ---------------------------------------------------------------------------
 
 class _ClosedLoginView extends ConsumerStatefulWidget {

@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/database/app_database.dart';
+import '../core/database/providers.dart';
 import '../core/database/tables.dart';
 
 /// Root navigation screen — the pre-login entry point.

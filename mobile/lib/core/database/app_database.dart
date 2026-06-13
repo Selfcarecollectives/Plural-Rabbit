@@ -1,4 +1,4 @@
-import 'package:drift/drift.dart';
+import 'package:drift/drift.dart' hide Type;
 import 'package:drift_sqflite/drift_sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -14,7 +14,7 @@ part 'app_database.g.dart';
 
 /// The single Drift database for Plural Rabbit.
 ///
-/// Key design decisions (from Technical doc Â§16.1):
+/// Key design decisions (from Technical doc §16.1):
 /// - SQLCipher key is passed via [SqfliteDatabase.encryptionKey]
 /// - schemaVersion starts at 1; every migration must be versioned
 /// - Master History Log writes are atomic with every state change
@@ -68,7 +68,7 @@ class AppDatabase extends _$AppDatabase {
 
   /// Seeds the two built-in archive reason labels on first launch.
   Future<void> _seedDefaultData() async {
-    // No system row seeded here â€” system creation happens in the
+    // No system row seeded here — system creation happens in the
     // first-launch flow (SystemDao.createSystem).
     // Archive labels are vault/system-agnostic seeds:
     // They are created with the system once the system row exists.
@@ -85,8 +85,8 @@ QueryExecutor _openConnection(String encryptionKey) {
     // drift_sqflite passes this to sqlite3's PRAGMA key= call on open.
     singleInstance: true,
     logStatements: false,
-    creator: (db) async {
-      await db.execute("PRAGMA key='$encryptionKey'");
+    creator: (sqfliteDb) async {
+      await (sqfliteDb as dynamic).execute("PRAGMA key='$encryptionKey'");
     },
   );
 }

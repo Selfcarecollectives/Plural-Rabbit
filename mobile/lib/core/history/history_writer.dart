@@ -1,4 +1,5 @@
-import 'dart:convert';
+﻿import 'dart:convert';
+import 'package:drift/drift.dart' hide Type;
 import 'package:uuid/uuid.dart';
 
 import '../database/app_database.dart';

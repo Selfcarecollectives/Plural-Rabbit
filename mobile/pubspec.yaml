@@ -40,7 +40,6 @@ dependencies:
   drag_and_drop_lists: ^0.4.2
 
   # Media
-  record: ^5.1.2                # voice recording
   audioplayers: ^6.0.0
   file_picker: ^8.1.2
 
@@ -80,3 +79,5 @@ flutter:
     - assets/body_map/
     - assets/icons/
     - assets/onboarding/
+
+dependency_overrides:

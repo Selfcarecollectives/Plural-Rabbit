@@ -1,7 +1,9 @@
+﻿import 'package:drift/drift.dart' hide Type;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../core/database/app_database.dart';
+import '../../core/database/providers.dart';
 import '../../core/database/tables.dart';
 import '../../core/encryption/password_hasher.dart';
 import '../../core/history/history_writer.dart';

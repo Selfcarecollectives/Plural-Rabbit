@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:drift/drift.dart' hide Type, Column;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../core/database/app_database.dart';
+import '../../core/database/providers.dart';
 import '../../core/database/tables.dart';
 import '../../core/encryption/password_hasher.dart';
 import '../../core/history/history_writer.dart';
@@ -31,17 +33,17 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   final _nameCtrl = TextEditingController(text: 'Plural Rabbit');
   String? _logoPath;
 
-  // Step 2 â€“ Security Password
+  // Step 2 – Security Password
   final _secPassCtrl = TextEditingController();
   final _secPassConfirmCtrl = TextEditingController();
   bool _setSecurityPassword = false;
 
-  // Step 3 â€“ Master Password
+  // Step 3 – Master Password
   final _masterPassCtrl = TextEditingController();
   final _masterPassConfirmCtrl = TextEditingController();
   bool _setMasterPassword = false;
 
-  // Step 4 â€“ Login mode
+  // Step 4 – Login mode
   String _loginMode = 'open';
 
   bool _isLoading = false;
@@ -82,7 +84,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   }
 
   // -------------------------------------------------------------------------
-  // Step 1 â€” App name & logo
+  // Step 1 — App name & logo
   // -------------------------------------------------------------------------
 
   Widget _buildStep1() {
@@ -94,7 +96,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
                 fontWeight: FontWeight.bold)),
         const SizedBox(height: 8),
         const Text(
-            'This is purely cosmetic â€” it\'s what you\'ll see as the app name.'),
+            'This is purely cosmetic — it\'s what you\'ll see as the app name.'),
         const SizedBox(height: 24),
         TextField(
           controller: _nameCtrl,
@@ -125,7 +127,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   }
 
   // -------------------------------------------------------------------------
-  // Step 2 â€” Security Password
+  // Step 2 — Security Password
   // -------------------------------------------------------------------------
 
   Widget _buildStep2() {
@@ -140,7 +142,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
         const SizedBox(height: 8),
         const Text(
             'The Security Password protects the Master History Log and sensitive '
-            'settings. It\'s optional â€” leave it blank to skip.'),
+            'settings. It\'s optional — leave it blank to skip.'),
         const SizedBox(height: 24),
         SwitchListTile(
           value: _setSecurityPassword,
@@ -170,7 +172,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   }
 
   // -------------------------------------------------------------------------
-  // Step 3 â€” Master Password
+  // Step 3 — Master Password
   // -------------------------------------------------------------------------
 
   Widget _buildStep3() {
@@ -216,7 +218,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   }
 
   // -------------------------------------------------------------------------
-  // Step 4 â€” Login mode
+  // Step 4 — Login mode
   // -------------------------------------------------------------------------
 
   Widget _buildStep4() {
@@ -243,7 +245,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
           groupValue: _loginMode,
           onChanged: (v) => setState(() => _loginMode = v!),
           title: const Text('Closed Login'),
-          subtitle: const Text('No names visible â€” type your profile name'),
+          subtitle: const Text('No names visible — type your profile name'),
         ),
         const Spacer(),
         Row(children: [_backButton(), const Spacer(), _nextButton()]),
@@ -252,7 +254,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
   }
 
   // -------------------------------------------------------------------------
-  // Step 5 â€” Review & create
+  // Step 5 — Review & create
   // -------------------------------------------------------------------------
 
   Widget _buildStep5() {
@@ -341,7 +343,7 @@ class _SystemSetupScreenState extends ConsumerState<SystemSetupScreen> {
       // Seed default archive labels
       await db.systemDao.seedDefaultArchiveLabels(systemId, false);
 
-      // Log system creation (tutorial mode is on â€” this gets skipped,
+      // Log system creation (tutorial mode is on — this gets skipped,
       // which is correct: system creation is pre-tutorial)
       await history.logSystemCreate(systemId);
 
